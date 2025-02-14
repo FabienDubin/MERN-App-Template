@@ -1,0 +1,46 @@
+# Global Node.js
+node_modules/
+npm-debug.log
+yarn-debug.log
+yarn-error.log
+pnpm-debug.log
+
+# Environnements (⚠️ très important)
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
+lerna-debug.log*
+.stackdump
+
+# MacOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+*.lnk
+
+# VS Code
+.vscode/
+*.code-workspace
+
+# Build files
+client/build/
+client/dist/
+server/build/
+
+# Dependencies spécifiques (si jamais)
+client/node_modules/
+server/node_modules/
