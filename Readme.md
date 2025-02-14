@@ -75,7 +75,7 @@ The profile page of the user. Basically, the user can update its informations. R
 ### Dashboard 📊
 
 The dashboard is only accessible for the users with the "Admin" role.
-Set the default admins to the server .env file to get the user role set to admin for the defined users when they register (WIP).
+Set the default admins to the server .env file to get the user role set to admin for the defined users when they register.
 
 - **Main page** : Some example of dataviz. It needs to be plugged to the relevant data
 - **User Management** : This table allows the admin to manage the registered users and create new ones
@@ -193,7 +193,7 @@ This page is displayed when a user tries to go to a page that is not allowed. Fo
 Here is a list of the next features I would like to add :
 
 - [x] **`Mailjet integration`**: <strike>Adding reset password with Mailjet.</strike>
-- [x] **`Auto admin role assignation`**: <strike>Check on the server side to add the admin role on a defined list of users.<strike>
+- [x] **`Auto admin role assignation`**: <strike>Check on the server side to add the admin role on a defined list of users.</strike>
 - [ ] **`CSV import`**: Import user list via csv or copy paste.
 - [ ] **`Dockerize the app`**: Write the docker compose for server deployment.
 
