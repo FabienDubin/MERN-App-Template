@@ -107,6 +107,8 @@ This page is displayed when a user tries to go to a page that is not allowed. Fo
 > PORT=5005
 > ORIGIN=http://localhost:5173
 > TOKEN_SECRET=*** #Define a tocken secret for JWT token generation
+> APP_NAME=MERN-App-Template #Kebab case please
+> MONGODB_URI=*** #"mongodb://127.0.0.1:27017/MERN-App-Template";
 >
 > #AdminUser
 > ADMINS=[Array of emails] #all emails is this array will get the role set to Admin when they register
