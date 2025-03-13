@@ -4,7 +4,7 @@ const router = express.Router();
 const axios = require("axios");
 
 // ℹ️ Handles password encryption
-const bcrypt = require("bcrypt");
+const bcrypt = require("bcryptjs");
 
 // ℹ️ Handles password encryption
 const jwt = require("jsonwebtoken");

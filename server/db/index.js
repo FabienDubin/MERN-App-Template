@@ -7,7 +7,7 @@ const mongoose = require("mongoose");
 
 const MONGO_URI =
   process.env.MONGODB_URI ||
-  `mongodb://127.0.0.1:27017/${process.env.APP_NAME}`;
+  `mongodb://${process.env.MONGODB_USER}:${MONGODB_PASSWORD}127.0.0.1:27017/${process.env.APP_NAME}`;
 
 mongoose
   .connect(MONGO_URI)

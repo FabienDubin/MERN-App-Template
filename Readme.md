@@ -99,7 +99,7 @@ This page is displayed when a user tries to go to a page that is not allowed. Fo
 
 1. Clone this repository to your local machine.
 2. Install the dependencies by running `npm install` in the client and the server folders
-3. Set the environment variables in `.env` file for the client AND the server
+3. Set the environment variables in `.env` file for the client AND the server AND the root folder
 
 ### Basic settings on server side
 
@@ -108,7 +108,11 @@ This page is displayed when a user tries to go to a page that is not allowed. Fo
 > ORIGIN=http://localhost:5173
 > TOKEN_SECRET=*** #Define a tocken secret for JWT token generation
 > APP_NAME=MERN-App-Template #Kebab case please
-> MONGODB_URI=*** #"mongodb://127.0.0.1:27017/MERN-App-Template";
+>
+> #MONGO
+> MONGODB_USER=*** #Please change this
+> MONGODB_PASSWORD=*** #Please change this
+> MONGODB_URI=mongodb://127.0.0.1:27017/MERN-App-Template
 >
 > #AdminUser
 > ADMINS=[Array of emails] #all emails is this array will get the role set to Admin when they register
@@ -143,12 +147,21 @@ This page is displayed when a user tries to go to a page that is not allowed. Fo
 > VITE_RECAPTCHA_SITE_KEY=*** #Paste here your ReCAPTCHA Site Key from Google admin console
 > ```
 
+### Basic settings on the root folder for the docker-compose
+
+> ```
+> MONGO_INITDB_ROOT_USERNAME=fab
+> MONGO_INITDB_ROOT_PASSWORD=Test123
+> MONGOEXPRESS_BASIC_AUTH_USERNAME=fab
+> MONGOEXPRESS_BASIC_AUTH_PASSWORD=Test123
+> ```
+
 ## List the dependencies
 
 ### Server (server/package.json)
 
 - axios: For making HTTP requests.
-- bcrypt: For hashing passwords.
+- bcryptjs: For hashing passwords.
 - cloudinary: For media storage and management.
 - cookie-parser: For parsing cookies from the browser.
 - cors: For handling CORS (Cross-Origin Resource Sharing).
@@ -197,7 +210,8 @@ Here is a list of the next features I would like to add :
 - [x] **`Mailjet integration`**: <strike>Adding reset password with Mailjet.</strike>
 - [x] **`Auto admin role assignation`**: <strike>Check on the server side to add the admin role on a defined list of users.</strike>
 - [ ] **`CSV import`**: Import user list via csv or copy paste.
-- [ ] **`Dockerize the app`**: Write the docker compose for server deployment.
+- [x] **`Dockerize the app`**: <strike>Write the docker compose for server deployment.</strike>
+- [ ] **`Add proxy`**: Add a proxy to expose the app to the internet.
 
 I hope you find this project useful! If you would like to contribute, please feel free to clone the repo and submit a pull request. I am also open to feature requests or sharing ideas on how to improve the project.
 
