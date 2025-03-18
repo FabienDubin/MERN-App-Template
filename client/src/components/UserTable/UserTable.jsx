@@ -4,6 +4,7 @@ import _ from "lodash";
 
 //COMPONENTS
 import UserSheet from "@/components/UserTable/UserSheet";
+import UserImport from "../UserImport";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -23,9 +24,18 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
+
 import { Button } from "@/components/ui/button";
 import { Skeleton } from "@/components/ui/skeleton";
-import { ArrowUpDown, ChevronDown } from "lucide-react";
+import { ArrowUpDown, ChevronDown, Import } from "lucide-react";
 
 //TABLE FORMATTING
 const columns = [
@@ -64,11 +74,20 @@ const UserTable = () => {
   const [page, setPage] = useState(1);
   const [totalPages, setTotalPages] = useState(null);
   const [totalUsers, setTotalUsers] = useState(null);
+  const [pageDialog, setPageDialog] = useState(1);
+  const [open, setOpen] = useState(false);
   const limit = 10;
 
   const [search, setSearch] = useState("");
   const [debouncedSearch, setDebouncedSearch] = useState("");
   const [isSearching, setIsSearching] = useState(false);
+
+  const importDescription = [
+    "Insert datas",
+    "Colums mapping :",
+    "Import Preview :",
+    "Import successful",
+  ];
 
   //FUNCTIONS & HANDLERS
   // Fetch users or search results
@@ -165,9 +184,39 @@ const UserTable = () => {
           value={search}
           onChange={handleSearchChange}
         />
-        <div>
+        <div className="flex">
           {/* Add user button to create a new user to the list  */}
           <UserSheet onSave={refreshUsers} />
+          {/* Bulk import of a list of users  */}
+          <Dialog
+            open={open}
+            onOpenChange={(isOpen) => {
+              setOpen(isOpen);
+              if (!isOpen) setPageDialog(1); // Réinitialiser pageDialog à 1 quand on ferme la modale
+            }}
+          >
+            <DialogTrigger asChild>
+              <Button className="mr-2">
+                <Import />
+                Import a list
+              </Button>
+            </DialogTrigger>
+            <DialogContent>
+              <DialogHeader>
+                <DialogTitle>Import a list of users</DialogTitle>
+                <DialogDescription>
+                  {importDescription[`${pageDialog}` - 1]}
+                </DialogDescription>
+              </DialogHeader>
+              <div>
+                <UserImport
+                  pageDialog={pageDialog}
+                  setPageDialog={setPageDialog}
+                />
+              </div>
+            </DialogContent>
+          </Dialog>
+
           {/* Dropdown to select the column visibility */}
           <DropdownMenu>
             <DropdownMenuTrigger asChild>

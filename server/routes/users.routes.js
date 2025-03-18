@@ -173,4 +173,44 @@ router.get("/search", async (req, res) => {
   }
 });
 
+router.post("/import", async (req, res) => {
+  try {
+    const users = req.body;
+    let importedUsers = [];
+    let errors = [];
+
+    //Check if the user has an email
+    for (const user of users) {
+      if (!user.email) {
+        errors.push(`Email is missing : ${JSON.stringify(user)}`);
+        continue;
+      }
+
+      //Check if the email is already used
+      const existingUser = await User.findOne({ email: user.email });
+      if (existingUser) {
+        errors.push(`Email already in database : ${user.email}`);
+        continue;
+      }
+      //Add the current user to the array of users to import
+      importedUsers.push(user);
+    }
+
+    if (importedUsers.length > 0) {
+      await User.insertMany(importedUsers);
+    }
+    if (errors.length > 0) {
+      return res.json({
+        message:
+          "Users partially imported. The following users haven't been added :",
+        errors,
+      });
+    }
+    return res.json({ message: "Users imported successfully", errors });
+  } catch (error) {
+    console.log(error);
+    return res.status(500).json({ message: "😩 Import error :", error });
+  }
+});
+
 module.exports = router;

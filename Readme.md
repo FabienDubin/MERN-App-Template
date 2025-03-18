@@ -17,6 +17,7 @@ This is a simple React, Express, and MongoDB application template that you can u
 - 🏃‍♂️ **React Router**: A routing library for React applications.
 - 🛠️ **ShadCN**: A popular CSS framework for building responsive web applications.
 - 🎨 **TailwindCSS**: A popular CSS framework for building responsive web applications.
+- 🐳 **Docker**: An open-source platform for developing, shipping, and running applications inside containers.
 
 ## Features
 
@@ -78,7 +79,7 @@ The dashboard is only accessible for the users with the "Admin" role.
 Set the default admins to the server .env file to get the user role set to admin for the defined users when they register.
 
 - **Main page** : Some example of dataviz. It needs to be plugged to the relevant data
-- **User Management** : This table allows the admin to manage the registered users and create new ones
+- **User Management** : This table allows the admin to manage the registered users, create new ones and bulk import via copy-paste from Excel
 - **Dashboard - Settings** : To be defined but the page is ready feel free to customize it
 <div style="text-align: center;">
 <div style="display: flex; justify-content: space-around;">
@@ -209,7 +210,7 @@ Here is a list of the next features I would like to add :
 
 - [x] **`Mailjet integration`**: <strike>Adding reset password with Mailjet.</strike>
 - [x] **`Auto admin role assignation`**: <strike>Check on the server side to add the admin role on a defined list of users.</strike>
-- [ ] **`CSV import`**: Import user list via csv or copy paste.
+- [x] **`Bulk import`**: <strike>Import user list via copy paste.</strike>
 - [x] **`Dockerize the app`**: <strike>Write the docker compose for server deployment.</strike>
 - [ ] **`Add proxy`**: Add a proxy to expose the app to the internet.
 

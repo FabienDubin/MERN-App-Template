@@ -47,6 +47,12 @@ class UserService {
     );
   }
 
+  //POST /users/import
+  //Import a list of users
+  bulkImport(users) {
+    return this.api.post("users/import", users);
+  }
+
   // PUT /update-image/:userId
   // Updates the user's profile picture via Cloudinary
   updateUserImage(userId, imageFile) {
