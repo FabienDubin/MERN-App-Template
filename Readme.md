@@ -6,7 +6,7 @@ This is a simple React, Express, and MongoDB application template that you can u
 
 <p align="center">
 	<a href="https://skillicons.dev">
-		<img src="https://skillicons.dev/icons?i=vite,express,nodejs,mongo,tailwind,">
+		<img src="https://skillicons.dev/icons?i=vite,express,nodejs,mongo,tailwind,docker">
 	</a></p>
 
 - ⚡ **Vite**: A popular JavaScript library for building user interfaces.
