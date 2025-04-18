@@ -91,7 +91,10 @@ const AdminDashboard = () => {
   return (
     <div className="w-full min-h-screen">
       <h1 className="text-2xl font-bold p-4">Hello {user.name}👋</h1>
-      <h2 className="text-xl font-medium px-4">
+      <h2
+        className="text-xl font-medium px-4"
+        data-testid="admin-dashboard-title"
+      >
         Welcome to your admin dashboard!
       </h2>
       <p className="px-4 mt-6 text-gray-600 font-light">

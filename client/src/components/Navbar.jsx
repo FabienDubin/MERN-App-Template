@@ -5,7 +5,7 @@ import { useTheme } from "./ThemeProvider";
 
 //COMPONENTS
 import Logo from "@/components/Logo";
-import { FALLBACK_IMG } from "@/config/fallbackimg.config";
+import { FALLBACK_IMG } from "@/config/envVar.config";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import {
   DropdownMenu,

@@ -28,6 +28,7 @@ function AuthProviderWrapper({ children }) {
     if (!storedToken) {
       setIsLoggedIn(false);
       setIsLoading(false);
+      setUser(null);
       return;
     }
 
@@ -39,7 +40,7 @@ function AuthProviderWrapper({ children }) {
         .then((response) => {
           // If the server verifies that JWT token is valid  ✅
           const user = response.data;
-          console.log(user);
+          // console.log(user);
 
           // Update state variables
           setIsLoggedIn(true);

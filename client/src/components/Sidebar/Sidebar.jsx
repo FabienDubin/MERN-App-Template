@@ -1,7 +1,7 @@
-import { useContext } from "react";
+import React, { useContext } from "react";
 import { AuthContext } from "@/context/auth.context";
 import { Link } from "react-router-dom";
-import { FALLBACK_IMG } from "@/config/fallbackimg.config";
+import { FALLBACK_IMG } from "@/config/envVar.config";
 
 //COMPONENTS
 import {

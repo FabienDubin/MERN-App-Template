@@ -11,9 +11,9 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { Pencil } from "lucide-react";
-import { FALLBACK_IMG } from "@/config/fallbackimg.config";
+import { FALLBACK_IMG } from "@/config/envVar.config";
 import authService from "@/services/auth.service";
-import { DEFAULT_PASS } from "@/config/defaultPassword.config";
+import { DEFAULT_PASS } from "@/config/envVar.config";
 import { AuthContext } from "@/context/auth.context";
 import { useToast } from "@/hooks/use-toast";
 

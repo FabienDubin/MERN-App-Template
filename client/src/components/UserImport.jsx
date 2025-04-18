@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { DEFAULT_PASS } from "@/config/defaultPassword.config";
+import { DEFAULT_PASS } from "@/config/envVar.config";
 import userService from "@/services/users.service";
 import { Textarea } from "./ui/textarea";
 import { Button } from "@/components/ui/button";

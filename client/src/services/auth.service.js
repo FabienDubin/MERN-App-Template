@@ -1,5 +1,5 @@
 import axios from "axios";
-import { API_URL } from "@/config/api.config";
+import { API_URL } from "@/config/envVar.config";
 
 class AuthService {
   constructor() {

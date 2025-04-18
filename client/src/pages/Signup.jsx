@@ -1,8 +1,9 @@
-import { useState, useContext } from "react";
+import React, { useState, useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import authService from "@/services/auth.service";
 import { AuthContext } from "@/context/auth.context";
 import ReCAPTCHA from "react-google-recaptcha";
+import { getRecaptchaKey } from "@/config/envVar.config";
 
 //COMPONENTS
 import { Siren, UserRoundPlus } from "lucide-react";
@@ -85,6 +86,7 @@ function Signup() {
               <Input
                 className="mb-2"
                 type="text"
+                data-testid="firstName"
                 placeholder="This will be on your profile"
                 value={firstName}
                 onChange={(e) => setFirstName(e.target.value)}
@@ -96,6 +98,7 @@ function Signup() {
               <Input
                 className="mb-2"
                 type="text"
+                data-testid="lastName"
                 placeholder="This will be on your profile"
                 value={lastName}
                 onChange={(e) => setLastName(e.target.value)}
@@ -107,6 +110,7 @@ function Signup() {
               <Input
                 className="mb-2"
                 type="email"
+                data-testid="email"
                 placeholder="Your Email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
@@ -118,6 +122,7 @@ function Signup() {
               <Input
                 className="mb-2"
                 type="password"
+                data-testid="password"
                 placeholder="...don't put pass123"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
@@ -131,6 +136,7 @@ function Signup() {
               <Input
                 className="mb-2"
                 type="password"
+                data-testid="confirmPassword"
                 placeholder="...don't put pass123"
                 value={confirmPassword}
                 onChange={(e) => setConfirmPassword(e.target.value)}
@@ -138,7 +144,7 @@ function Signup() {
               />
             </div>
             <ReCAPTCHA
-              sitekey={import.meta.env.VITE_RECAPTCHA_SITE_KEY}
+              sitekey={getRecaptchaKey()}
               onChange={(token) => setRecaptchaToken(token)}
               className="my-4"
             />

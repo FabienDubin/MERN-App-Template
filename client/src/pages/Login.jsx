@@ -89,6 +89,7 @@ const Login = () => {
                 <Input
                   className="mb-2"
                   type="email"
+                  id="email"
                   placeholder="Your Email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
@@ -100,6 +101,7 @@ const Login = () => {
                 <Input
                   className="mb-2"
                   type="password"
+                  id="password"
                   placeholder="Your super secret password"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}

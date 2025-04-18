@@ -213,7 +213,7 @@ Here is a list of the next features I would like to add :
 - [x] **`Bulk import`**: <strike>Import user list via copy paste.</strike>
 - [x] **`Dockerize the app`**: <strike>Write the docker compose for server deployment.</strike>
 - [ ] **`Add proxy`**: Add a proxy to expose the app to the internet.
-- [ ] **`Add unit tests`**: Add unit tests for all routes.
+- [x] **`Add unit tests`**: Add unit tests for all middlewares and controllers on the server side and .
 
 I hope you find this project useful! If you would like to contribute, please feel free to clone the repo and submit a pull request. I am also open to feature requests or sharing ideas on how to improve the project.
 
