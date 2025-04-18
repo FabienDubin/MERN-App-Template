@@ -96,6 +96,43 @@ The not found page is displayed when the url doesn't exist
 
 This page is displayed when a user tries to go to a page that is not allowed. For example, when a normal user want to go to the dashboard.
 
+## Tests
+
+This project includes a test suite using **Jest** and **Testing Library** (client side) and **Supertest** (server side).
+
+### ✅ Backend Tests
+
+- **`auth.test.js`**: Tests login/signup/logout behavior and token generation.
+- **`middleware.test.js`**: Tests route protections like `isAuthenticated` and `isAdmin`.
+- **`user.test.js`**: Tests user-related CRUD operations and permissions.
+- **`admin-role-env.test.js`**: Ensures users listed in the `ADMINS` env variable are assigned the admin role on creation.
+
+### ✅ Frontend Tests
+
+- **`AdminAuthFlow.test.jsx`**: Tests that an admin can sign up and access the dashboard (protected by `IsAdmin`, `IsPrivate`).
+- **`AuthContext.test.jsx`**: Tests authentication context logic (login, logout).
+- **`Login.test.jsx` / `SignUp.test.jsx`**: Simulates user interactions with the login and signup forms.
+
+To run all tests:
+
+```bash
+npm run test
+```
+
+## Contributing
+
+Want to contribute? Awesome! ✨
+
+To get started:
+
+1. Fork this repository.
+2. Create a new branch (`git checkout -b feature/yourFeatureName`).
+3. Commit your changes (`git commit -am 'Add some feature'`).
+4. Push to the branch (`git push origin feature/yourFeatureName`).
+5. Create a new Pull Request.
+
+Please make sure your code passes the tests and follows the existing coding style. Add test coverage for new features if relevant.
+
 ## Installation
 
 1. Clone this repository to your local machine.
@@ -121,10 +158,10 @@ This page is displayed when a user tries to go to a page that is not allowed. Fo
 > #Cloudinary config (to enable the profile image upaload)
 > CLOUDINARY_API_KEY=**_ #Paste your Cloudinary api key
 > CLOUDINARY_API_SECRET= _** #Paste your Cloudinary api key
-> CLOUDINARY_NAME=\*\*\* #Paste here your cloudinary cloud name
+> CLOUDINARY_NAME=*** #Paste here your cloudinary cloud name
 >
 > #ReCAPTCHA
-> RECAPTCHA_SECRET_KEY=\*\*\* #Paste here your ReCAPTCHA Secret Key from Google admin console
+> RECAPTCHA_SECRET_KEY=*** #Paste here your ReCAPTCHA Secret Key from Google admin console
 >
 > #MailJet
 > MAILJET_API_KEY=*** #Paste the Mailjet API key
@@ -179,7 +216,7 @@ This page is displayed when a user tries to go to a page that is not allowed. Fo
 
 ### Client (client/package.json)
 
-- @radix-ui/react-\*: A collection of accessible and reusable UI components.
+- @radix-ui/react-\* : A collection of accessible and reusable UI components.
 - @tanstack/react-table: A library for creating interactive tables in React.
 - axios: For making HTTP requests.
 - class-variance-authority: For managing dynamic CSS classes in TypeScript.
@@ -213,7 +250,7 @@ Here is a list of the next features I would like to add :
 - [x] **`Bulk import`**: <strike>Import user list via copy paste.</strike>
 - [x] **`Dockerize the app`**: <strike>Write the docker compose for server deployment.</strike>
 - [ ] **`Add proxy`**: Add a proxy to expose the app to the internet.
-- [x] **`Add unit tests`**: Add unit tests for all middlewares and controllers on the server side and .
+- [x] **`Add unit tests`**: <strike>Add unit tests for all middlewares and controllers on the server side and .</strike>
 
 I hope you find this project useful! If you would like to contribute, please feel free to clone the repo and submit a pull request. I am also open to feature requests or sharing ideas on how to improve the project.
 
